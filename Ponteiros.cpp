@@ -42,6 +42,15 @@ void Exibir(TpPont *Lista)
 	}
 	printf("\n %c",Lista->Info); // Exibe fora pois quando chegar no ultimo ele vai apontar para o null e não vai dar para exibir o ultimo
 	getch();
+	
+	
+	/*  Para eu ler tudo sem precisar colocar depois o printf é só eu tirar o -> da condição do while
+		while(Lista!= NULL){
+	
+		printf("\n %c",Lista->Info); // Exibe para a posição que está apontando
+		Lista = Lista->prox;  // passa para prox posição
+	}
+	*/
 }
 
 int main(void)
