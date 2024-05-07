@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include<stdio.h>
 
 struct tpPont{
 	char Info;
@@ -30,6 +30,30 @@ TpPont *InserirInicio(TpPont *Lista){
 	   printf("\nDigite o Elemento: "); Elemento=getche();
 	}
 	}
+	
+TpPont *InserirFim(TpPont *Lista)
+{
+	char Elemento;
+	TpPont *NC,*p;
+	printf("\nInserir na lista dinamica simplesmente encadeada!\n");
+	printf("Digite o Elemento\n");
+	Elemento=getche();
+	while(Elemento!= 27)
+	{
+		NC = NovaCaixa(Elemento); // Nova caixa vai retornar a posição em que foi inserido o elemento (O NC APONTA PARA O LUGAR NO QUAL FOI CRIADO)
+		if(L==NULL)
+			L==NC;
+		else{
+			p=Lista
+			while(p->prox!=NULL)
+				p=p->prox;
+			p->prox = NC;
+		}
+		printf("Elemento:");
+		Elemento = getche();
+	}
+	return Lista;
+}
 
 void Exibir(TpPont *Lista)
 {
@@ -37,20 +61,11 @@ void Exibir(TpPont *Lista)
 	printf("\n##Conteudo da Lista##\n");
 	while(Lista-> != NULL){
 	
-		printf("\n %c",Lista->Info); // Exibe para a posição que está apontando
-		Lista = Lista->prox;  // passa para prox posição
+		printf("\n %c",Lista->Info);
+		Lista = Lista->prox;
 	}
-	printf("\n %c",Lista->Info); // Exibe fora pois quando chegar no ultimo ele vai apontar para o null e não vai dar para exibir o ultimo
+	printf("\n %c",Lista->Info);
 	getch();
-	
-	
-	/*  Para eu ler tudo sem precisar colocar depois o printf é só eu tirar o -> da condição do while
-		while(Lista!= NULL){
-	
-		printf("\n %c",Lista->Info); // Exibe para a posição que está apontando
-		Lista = Lista->prox;  // passa para prox posição
-	}
-	*/
 }
 
 int main(void)
