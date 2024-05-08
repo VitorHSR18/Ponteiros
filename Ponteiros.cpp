@@ -31,6 +31,19 @@ TpPont *InserirInicio(TpPont *Lista){
 	}
 	}
 	
+TpPont *InserirOrdenado(TpPont *Lista)
+{
+	char Elemento;
+	TpPont
+	printf("\nInserir Ordenado\n");
+	printf("Digite o elemento:");
+	Elemento=getche();
+	while(Elemento!=27)
+	{
+		
+	}
+	}
+
 TpPont *InserirFim(TpPont *Lista)
 {
 	char Elemento;
@@ -50,6 +63,49 @@ TpPont *InserirFim(TpPont *Lista)
 			p->prox = NC;
 		}
 		printf("Elemento:");
+		Elemento = getche();
+	}
+	return Lista;
+}
+TpPont *Excluir(TpPont *Lista)
+{
+	// Para realizar a exclusão preciso antes mudar para quem o objeto que apontava para o que eu vou excluir aponte para o próximo ou nulo
+	
+	
+	TpPont *aux;
+	char Elemento;
+	clrscr();
+	printf("\n##Exclusão##\n");
+	printf("Elemento:\n");
+	Elemento=getche();
+	while(Elemento!=27)
+	{
+		if (Elemento==Lista->Info) // Quando o elemento é o primeiro da Lista
+		{
+			aux=Lista;
+			Lista= Lista -> prox; // já que pegamos a auxiliar e marcamos qual queremos excluir podemos ligar a lista com o próximo dela já
+			delete(aux);
+		}
+		else
+		{
+			aux = Lista;
+			ant=Lista;
+			while(aux!=NULL && aux->Info!=Elemento){ // enquanto não chegar e não achar o elemento continua
+				ant=aux; // usamos 2 váriaveis para andar , se caso achar podemos ajustar 
+				aux = aux->prox;
+				
+			}
+				if(aux==NULL)
+				{
+					printf("\nNão Encontrou!\n");
+				}
+				else
+				{
+					ant->prox=aux->prox; // se caso achar o proximo do anterior vai apontar para o proximo do auxiliar
+					delete(aux);
+				}
+		}
+		printf("\nElemento");
 		Elemento = getche();
 	}
 	return Lista;
